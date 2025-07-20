@@ -1,0 +1,706 @@
+/* Reset and fonts */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000408;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 5rem;
+  background: transparent;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  height: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.nav-links a.active {
+  font-weight: 600;
+  opacity: 1;
+}
+
+.cta a {
+  color: #50bcd9;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background-image: url('../assets/Frame 5.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 5rem;
+  color: white;
+    position: relative; 
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.hero button {
+  background-color: #00D1E0;
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.right-division {
+  display: flex;
+  flex-direction: column;      /* Flow: Vertical */
+  width: 577.5px;              /* Width: Fill (577.5px) */
+  height: 589px;               /* Height: Hug (589px) */
+  padding: 50px 40px;          /* Padding: 50px top/bottom, 40px left/right */
+  gap: 10px;                   /* Gap between items */
+  background: rgba(15, 24, 34, 0.75); /* Adjust for readability */
+  color: #fff;
+  box-sizing: border-box;
+  border-radius: 12px;         /* Optional: for Figma-style smoothing */
+  /* Add position and shadow as desired for overlay effect */
+}
+.right-overlay {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 577.5px;
+  height: 589px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 40px;
+  gap: 10px;
+  background: rgba(15, 24, 34, 0.75); /* semi-transparent */
+  color: #fff;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(25px);   
+
+  /* border: 1px solid rgba(255,255,255,0.1); */
+  z-index: 10;  /* higher than other elements */
+  justify-content: flex-start;
+}
+
+.tour-option {
+  margin-bottom: 32px;
+}
+
+.tour-option h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.tour-option p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.tour-option:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .right-overlay {
+    position: static;
+    width: 100vw;
+    height: auto;
+    padding: 24px;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 0 150px;
+  /* Remove/adjust any background here so only .card-section has the image */
+}
+
+.card {
+  background: rgba(15, 24, 34, 0.75);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.20);
+  width: 400px;
+  min-height: 440px;
+  padding: 40px 32px 32px 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #50bcd9;
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #50bcd9;
+  margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .card-row {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .card {
+    width: 90vw;
+    min-width: unset;
+  }
+}
+
+.card-section {
+  
+  position: relative;
+  width: 100%;
+  min-height: 620px; /* Adjust per your Figma, e.g. ~650-700px */
+  background-image: url('../assets/historic destinations.svg'); /* Use forward slash, relative path from CSS file */
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0 70px 0; /* vertical spacing */
+  z-index: 1;
+}
+
+.card-section .card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 34px; /* Adjust gap for even card separation as seen in Figma */
+  width: 100%;
+  max-width: 1240px;
+  justify-content: center;
+}
+
+.card-section .card {
+ 
+  
+  border-radius: 0px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.19);
+  width: 370px;          /* As close to Figma as possible */
+  min-height: 430px;     /* Adjust for consistent height */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 32px 32px 32px;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s;
+ 
+  border: 1px solid rgba(255,255,255,0.11);
+}
+
+.card-section .card img {
+  width: 100%;
+  height: 145px;   /* Slightly shorter for modern look */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.09);
+}
+
+.card-section .card h3 {
+  font-size: 1.22rem;
+  font-weight: 600;
+  margin-bottom: 13px;
+  color: #fff;
+}
+
+.card-section .card p {
+  font-size: 1rem;
+  opacity: 0.93;
+  margin-bottom: 27px;
+  color: #e6e6e6;
+}
+
+.card-section .price {
+  color: #50bcd9;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* Responsive (from Figma tablet view) */
+@media (max-width: 1100px) {
+  .card-section .card-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .card-section .card {
+    width: 94vw;
+    min-width: unset;
+  }
+  .card-section {
+    padding: 50px 0;
+    min-height: 500px;
+  }
+}
+
+.parent-section {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background-image: url('../assets/rejuvenation.svg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.parent-section .card-row {
+  display: flex;
+  gap: 40px;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.parent-section .card {
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(31,38,135,0.19);
+  width: 350px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s;
+}
+
+
+.parent-section .card h3 {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.parent-section .card p {
+  margin-bottom: 18px;
+  opacity: 0.85;
+  font-size: 1rem;
+}
+
+.parent-section .detail {
+  font-size: 0.98rem;
+  margin-top: auto;
+  color: #50bcd9;
+  font-weight: 600;
+}
+
+.parent-section .card img {
+  width: 120px;           /* Fixed width for circle */
+  height: 120px;          /* Fixed height for circle */
+  object-fit: cover;      /* Maintains aspect ratio while cropping */
+  border-radius: 50%;     /* Makes image perfectly circular */
+  margin-bottom: 24px;    /* Spacing below the circular image */
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);  /* Optional: soft shadow for depth */
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .card-row {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    align-items: center;
+  }
+  .parent-section .card {
+    width: 90vw;
+    min-width: unset;
+  }
+}
+
+/* ---------- OCEANICA FOOTER ---------- */
+.custom-footer{
+  background:#070b11;
+  color:#e9ecef;
+  font-family:'Poppins',sans-serif;
+  padding:60px 0 0;
+  border-radius:20px 20px 0 0;
+}
+
+/* Primary flex row */
+.custom-footer .footer-main{
+  max-width:1240px;
+  margin:0 auto;
+  padding:0 60px 54px;
+  display:flex;
+  gap:72px;                 /* spacing between the three blocks */
+  flex-wrap:wrap;
+  justify-content:flex-start;
+}
+
+/* ---------- Brand block ---------- */
+.custom-footer .footer-brand{flex:0 0 230px;}
+
+.custom-footer .footer-logo{
+  display:flex;align-items:center;
+  gap:12px;
+  font-size:1.35rem;font-weight:600;
+  color:#ffffff;
+  margin-bottom:24px;
+}
+
+.custom-footer .footer-logo-img{
+  width:32px;height:32px;
+  object-fit:contain;
+  border-radius:6px;
+}
+
+.custom-footer .footer-contact{
+  list-style:none;margin:0;padding:0;line-height:1.9em;
+  font-size:0.97rem;opacity:0.88;
+}
+
+/* ---------- Link columns ---------- */
+.custom-footer .footer-links{
+  flex:1 1 420px;
+  display:flex;gap:60px;   /* gap equals screenshot column spacing */
+}
+
+.custom-footer .footer-links h4{
+  margin-bottom:12px;font-size:1.05rem;font-weight:600;color:#ffffff;
+}
+
+.custom-footer .footer-links ul{
+  list-style:none;margin:0;padding:0;line-height:1.9em;
+}
+
+.custom-footer .footer-links a{
+  color:#d1d5db;text-decoration:none;opacity:0.9;font-size:0.97rem;
+  transition:opacity .2s;
+}
+.custom-footer .footer-links a:hover{opacity:1;text-decoration:underline;}
+
+/* ---------- Newsletter block ---------- */
+.custom-footer .footer-newsletter{
+  flex:0 0 300px;
+  display:flex;flex-direction:column;
+}
+
+.custom-footer .footer-newsletter p{
+  font-size:1.04rem;font-weight:500;margin-bottom:14px;color:#ffffff;
+}
+
+.custom-footer .footer-newsletter form{
+  display:flex;width:100%;margin-bottom:10px;
+}
+
+.custom-footer .footer-newsletter input{
+  flex:1;padding:12px 16px;border:none;
+  border-radius:8px 0 0 8px;
+  background:#111824;color:#ffffff;font-size:1rem;
+}
+.custom-footer .footer-newsletter input::placeholder{color:#8f9aa7;}
+
+.custom-footer .footer-newsletter button{
+  padding:12px 22px;border:none;cursor:pointer;
+  background:#00d1e0;color:#001217;font-weight:600;
+  font-size:1rem;border-radius:0 8px 8px 0;
+  transition:background .2s;
+}
+.custom-footer .footer-newsletter button:hover{background:#00bbca;}
+
+.custom-footer .newsletter-note{
+  font-size:0.82rem;opacity:0.7;line-height:1.4;margin-top:6px;
+}
+
+.custom-footer .footer-social{
+  display:flex;gap:14px;margin-top:14px;
+}
+.custom-footer .footer-social a{
+  display:grid;place-items:center;
+  width:36px;height:36px;border-radius:50%;
+  background:#1f2937;color:#d1d5db;font-size:1.15rem;
+  transition:background .2s,color .2s;text-decoration:none;
+}
+.custom-footer .footer-social a:hover{background:#00d1e0;color:#001217;}
+
+/* ---------- Bottom strip ---------- */
+.custom-footer .footer-bottom{
+  border-top:1px solid #1f2735;
+  text-align:center;
+  padding:16px 10px 24px;
+  font-size:0.94rem;color:#9aa1ac;
+  background:#070b11;
+  border-radius:0 0 20px 20px;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media(max-width:1050px){
+  .custom-footer .footer-main{gap:48px;padding:0 40px 48px;}
+  .custom-footer .footer-links{gap:42px;}
+}
+@media(max-width:820px){
+  .custom-footer .footer-main{flex-direction:column;padding:0 24px 44px;}
+  .custom-footer .footer-brand,.custom-footer .footer-links,
+  .custom-footer .footer-newsletter{width:100%;}
+  .custom-footer .footer-links{gap:24px;flex-wrap:wrap;}
+}
+@media(max-width:500px){
+  .custom-footer .footer-social{gap:10px;}
+}
+/* ---------- END FOOTER ---------- */
+
+
+/* Tablet (up to 774px) */
+@media (max-width: 774px) {
+  /* Navbar columns to stack or menu for mobile */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem 1.4rem;
+    position: relative;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .cta {
+    margin-bottom: 10px;
+  }
+
+  /* Hero section center & padding */
+  .hero {
+    padding: 0 1.2rem;
+    align-items: flex-start;
+    text-align: center;
+    height: auto;
+    min-height: 50vh;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+
+  /* Cards: stack vertically, adjust size */
+  .card-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 22px !important;
+    padding: 0 8px;
+  }
+  .card, .parent-section .card {
+    width: 95vw !important;
+    min-width: unset !important;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 32px 12px !important;
+  }
+
+  /* Testimonials: full width */
+  .parent-section .card-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  /* Footer: stack columns, smaller padding */
+  .custom-footer .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 30px 16px 20px;
+  }
+  .custom-footer .footer-brand,
+  .custom-footer .footer-newsletter,
+  .custom-footer .footer-links {
+    width: 100%;
+  }
+  .custom-footer .footer-links {
+    gap: 8px;
+    flex-direction: column;
+  }
+  .custom-footer .footer-bottom {
+    padding: 12px 0;
+  }
+}
+
+/* Mobile (up to 375px) */
+@media (max-width: 400px) {
+  .navbar, .hero, .footer-main {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .hero h1 {
+    font-size: 2rem !important;
+  }
+  .hero p,
+  .parent-section .card p,
+  .card p,
+  .footer-newsletter p {
+    font-size: 0.98rem !important;
+  }
+  .card, .parent-section .card {
+    padding: 18px 4px !important;
+    width: 98vw !important;
+    max-width: 340px;
+  }
+  .card img, .parent-section .card img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .footer-main, .custom-footer .footer-main {
+    gap: 12px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  .custom-footer .footer-links {
+    gap: 4px !important;
+  }
+}
+
+/* Tablet: stack cards vertically, adjust width/gap */
+@media (max-width: 774px) {
+  .card-row,
+  .parent-section .card-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 10px;
+  }
+  .card,
+  .parent-section .card {
+    width: 90vw;
+    max-width: 400px;
+    padding: 30px 20px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile: single column, tighter padding, smaller images/text */
+@media (max-width: 375px) {
+  .card-row,
+  .parent-section .card-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 0 8px;
+  }
+  .card,
+  .parent-section .card {
+    width: 95vw;
+    max-width: 350px;
+    padding: 20px 12px;
+    margin: 0 auto;
+  }
+  .card img,
+  .parent-section .card img {
+    width: 100px;
+    height: 100px;
+  }
+  .card h3,
+  .parent-section .card h3 {
+    font-size: 1.15rem;
+  }
+  .card p,
+  .parent-section .card p {
+    font-size: 0.95rem;
+  }
+}
